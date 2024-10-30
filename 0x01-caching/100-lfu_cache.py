@@ -7,7 +7,7 @@
 from base_caching import BaseCaching
 
 
-class MRUCache(BaseCaching):
+class LFUCache(BaseCaching):
     """
         Adds an item to the cache data with
         the specified key using MRU replacement policy.
