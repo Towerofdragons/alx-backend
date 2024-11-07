@@ -1,4 +1,4 @@
-#!usr/bin/env python3
+#!/usr/bin/env python3
 """
 A basic Flask app
 """
@@ -12,16 +12,16 @@ class Config():
     """
     Class perfroms babel configurations at instatiation.
     """
-    def __init__(self, babel):
-        babel.default_locale = "en"
-        babel.default_timezone = "UTC"
+   
+    BABEL_DEFAULT_LOCALE= "en"
+    BABEL_DEFAULT_TIMEZONE = "UTC"
 
     LANGUAGES = ["en", "fr"]
 
 
 app = Flask(__name__)
+app.config.from_object(Config)
 babel = Babel(app)
-config = Config(babel)
 
 
 @app.route('/')
@@ -29,7 +29,7 @@ def home():
     """
     Route to home page.
     """
-    return render_template('0-index.html')
+    return render_template('0-index.html', title="Welcome to Holberton", header="Hello world")
 
 
 if __name__ == "__main__":
