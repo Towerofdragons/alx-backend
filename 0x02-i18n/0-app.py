@@ -12,8 +12,8 @@ class Config():
     """
     Class perfroms babel configurations at instatiation.
     """
-   
-    BABEL_DEFAULT_LOCALE= "en"
+
+    BABEL_DEFAULT_LOCALE = "en"
     BABEL_DEFAULT_TIMEZONE = "UTC"
 
     LANGUAGES = ["en", "fr"]
@@ -29,7 +29,7 @@ def home():
     """
     Route to home page.
     """
-    return render_template('0-index.html', title="Welcome to Holberton", header="Hello world")
+    return render_template('0-index.html')
 
 
 if __name__ == "__main__":
